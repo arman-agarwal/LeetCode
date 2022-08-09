@@ -14,11 +14,13 @@ class Solution {
         }
         if(index>=candidates.length)
             return;
-        list.add(candidates[index]);
-        sum+=candidates[index];
-        helper(target,sum,list,ans,index,candidates);
-        list.remove(list.size()-1);
-        sum-=candidates[index];
-        helper(target,sum,list,ans,index+1,candidates);
+        for(int i=index; i< candidates.length;i++){
+            sum+=candidates[i];
+            list.add(candidates[i]);
+            helper(target,sum,list,ans,i,candidates);
+            
+            sum-=candidates[i];
+            list.remove(list.size()-1);
+        }
     }
 }
