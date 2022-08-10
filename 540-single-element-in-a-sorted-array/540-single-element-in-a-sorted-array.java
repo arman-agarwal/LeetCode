@@ -6,7 +6,6 @@ class Solution {
         int high = nums.length-1;
         int mid = (low+high)/2;
         while(low<=high){
-            System.out.println(low+" "+high+" "+mid);
             if((mid & 1)==0){
                 if(nums[mid]==nums[mid-1])
                     high=mid-1;
