@@ -4,7 +4,6 @@ class Solution {
         for(int i=0; i<nums.length; i++){
             xor^=(i+1)^(nums[i]);
         }
-        System.out.println(xor);
         int bit = xor & ~(xor - 1);
         int x=0,y=0;
         for(int i=0; i<nums.length; i++){
