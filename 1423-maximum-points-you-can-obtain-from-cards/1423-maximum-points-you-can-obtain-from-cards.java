@@ -5,7 +5,6 @@ class Solution {
         int totalSum = 0;
         int currentSum = 0;
         int windowLength = cardPoints.length-k;
-        // if(windowLength==0)return Arrays.stream(cardPoints).sum();
         for(int i=0; i<windowLength; i++){
             currentSum+=cardPoints[i];
             totalSum+=cardPoints[i];
@@ -17,7 +16,6 @@ class Solution {
             currentSum-=cardPoints[i-windowLength];
         }
         minSum = Math.min(minSum, currentSum);
-        System.out.println(totalSum);
         return totalSum-minSum;
     }
 }
