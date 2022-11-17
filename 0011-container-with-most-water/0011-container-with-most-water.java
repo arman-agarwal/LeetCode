@@ -4,10 +4,11 @@ class Solution {
         int i = 0;
         int j = height.length - 1;
         while(i<j){
-            int area = (j-i)*(Math.min(height[i],height[j]));
-            max = Math.max(max, area);
-            if(height[i]<height[j])i++;
+            int area = (j-i)*(height[j]);
+            if(height[i]<height[j]){area = (j-i)*(height[i]);i++;}
             else j--;
+            max = Math.max(max, area);
+                        
         }
         return max;
     }
