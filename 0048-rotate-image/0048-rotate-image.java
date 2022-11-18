@@ -1,13 +1,9 @@
 //transpose and reverse left to right
 class Solution {
     public void rotate(int[][] matrix) {
-        long startTime = System.nanoTime();
         int n = matrix.length;
         transpose(matrix, n);
         reverse(matrix, n);
-        long endTime = System.nanoTime();
-        long totalTime = endTime - startTime;
-        System.out.println(totalTime);
     }
     
     private void transpose(int[][] matrix,int n){
