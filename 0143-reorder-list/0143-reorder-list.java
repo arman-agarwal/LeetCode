@@ -17,14 +17,7 @@ class Solution {
         ListNode mid = findMiddle(head);
         ListNode reversedHead = reverseHead(mid.next);
         mid.next = null;
-        ListNode curr = head;
-        ListNode next = reversedHead;
-        while(curr!=null){
-            ListNode temp = curr.next;
-            curr.next = next;
-            next = temp;
-            curr = curr.next;
-        }
+        interLeave(head, reversedHead);
     }
     
     private ListNode reverseHead(ListNode node){
@@ -50,5 +43,14 @@ class Solution {
             fast = fast.next.next;
         }
         return slow;
+    }
+    private void interLeave(ListNode curr, ListNode next){
+         ListNode temp;
+            while(curr!=null){
+            temp = curr.next;
+            curr.next = next;
+            next = temp;
+            curr = curr.next;
+        }
     }
 }
